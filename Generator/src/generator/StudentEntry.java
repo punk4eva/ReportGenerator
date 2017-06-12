@@ -9,6 +9,7 @@ public class StudentEntry{
     
     protected String name;
     protected double[] scores;
+    protected String report;
     
     public StudentEntry(String nm, double[] scrs){
         name = nm;
@@ -24,6 +25,10 @@ public class StudentEntry{
         scores[2] = Double.parseDouble(d);
         scores[3] = Double.parseDouble(e);
         scores[4] = Double.parseDouble(f);
+    }
+    
+    protected void setReport(String rep){
+        report = rep;
     }
     
 }
