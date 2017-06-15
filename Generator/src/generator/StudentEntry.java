@@ -1,5 +1,8 @@
 package generator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author Adam
@@ -10,11 +13,11 @@ package generator;
 public class StudentEntry{
     
 	
-	//Basic student data.
+    //Basic student data.
     protected String name;
     protected double[] scores;
     protected String report;
-    protected int mark = -1;
+    protected Double[] mark = new Double[5];
     
     /**
      * @param nm The name of the student.
@@ -49,6 +52,16 @@ public class StudentEntry{
      */
     protected void setReport(String rep){
         report = rep;
+    }
+    
+    /**
+     * Prints the student's data.
+     */
+    protected void print(){
+        System.out.println(name + ":\n\tResults: ");
+        for(int n=0;n<scores.length-1;n++) System.out.print(scores[n]+", ");
+        System.out.print(scores[scores.length-1]+"\n\t"+report+"\n\tFinal mark: "
+                + Utility.average(new ArrayList<>(Arrays.asList(mark))));
     }
     
 }

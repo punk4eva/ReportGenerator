@@ -11,20 +11,22 @@ import java.util.ArrayList;
 public class Stats{
 
 	
-	//Basic statistics for the test including the full set of results.
-	protected double range;
-	protected double average;
-	protected double top, mid, bad, worse;
-	protected ArrayList<Double> results;
-	
-	public Stats(ArrayList<Double> marks){
-		results = marks;
-		range = Utility.range(marks);
-		average = Utility.average(marks);
-		top = Generator.top(marks);
-		mid = Generator.mid(marks);
-		bad = Generator.bad(marks);
-		worse = Generator.worse(marks);
-	}
+    //Basic statistics for the test including the full set of results.
+    protected double range;
+    protected double average;
+    protected double top, mid, bad;
+    protected ArrayList<Double> results;
+    
+    /**
+     * @param marks The results for the test.
+     */
+    public Stats(ArrayList<Double> marks){
+        results = marks;
+	range = Utility.range(marks);
+	average = Utility.average(marks);
+	top = Utility.top(marks);
+	mid = Utility.mid(marks);
+	bad = Utility.bad(marks);
+    }
 	
 }
